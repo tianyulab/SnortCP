@@ -24,6 +24,9 @@ echo "安装DAQ"
 mkdir -p /src/snort-${SNORT_VERSION} && mkdir -p /etc/snort/rules/iplists && mkdir /etc/snort/preproc_rules && \
     mkdir /etc/snort/so_rules && mkdir -p /var/log/snort/archived_logs
 
+touch /etc/snort/rules/white_list.rules
+touch /etc/snort/rules/black_list.rules
+
 cd /src
 wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
 tar -zxf daq-${DAQ_VERSION}.tar.gz && cd daq-${DAQ_VERSION} && ./configure && make && make install && cd /src
