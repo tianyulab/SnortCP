@@ -56,7 +56,7 @@ chown -R snort:snort /usr/local/lib/snort_dynamicrules
 # 5.配置Snort.conf
 
 echo "配置Snort.conf"
-wget https://github.com/tianyulab/SnortCP/blob/master/Config/snort.conf -O /etc/snort/snort.conf
+wget https://github.com/tianyulab/SnortCP/raw/master/Config/snort.conf -O /etc/snort/snort.conf
 # ipvar HOME_NET [10.0.0.0/8,172.16.0.0/12,192.168.0.0/16]
 # ipvar EXTERNAL_NET !$HOME_NET
 # include $RULE_PATH/local.rules
