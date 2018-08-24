@@ -29,13 +29,14 @@ touch /etc/snort/rules/black_list.rules
 
 cd /src
 wget https://www.snort.org/downloads/archive/snort/daq-${DAQ_VERSION}.tar.gz
-tar -zxf daq-${DAQ_VERSION}.tar.gz && cd daq-${DAQ_VERSION} && ./configure && make && make install && cd /src
+tar -zxf daq-${DAQ_VERSION}.tar.gz && cd daq-${DAQ_VERSION} && ./configure && make && make install
 
 # 4.安装Snort
 
 echo "安装Snort"
 groupadd snort && useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
 
+cd /src
 wget https://www.snort.org/downloads/archive/snort/snort-${SNORT_VERSION}.tar.gz
 tar -zxf snort-${SNORT_VERSION}.tar.gz -C snort-${SNORT_VERSION} --strip-components=1 && \
     cd /src/snort-${SNORT_VERSION} && ./configure --enable-sourcefire && make -j $(nproc) && make install && \
